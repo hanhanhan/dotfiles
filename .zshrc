@@ -6,6 +6,13 @@ prompt adam1
 
 setopt histignorealldups sharehistory
 
+# aliases
+alias l="ls -la"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias mdocker="/home/hannah/projects/RadiologyAssistant/utility/./make-docker-compose"
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
