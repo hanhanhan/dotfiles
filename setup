@@ -1,0 +1,6 @@
+if [[ uname == `Linux` ]]; then
+  
+  sudo apt-get install byobu
+
+elif [[ uname == `Darwin`  ]]; then
+fi
