@@ -4,7 +4,13 @@ autoload -Uz promptinit
 promptinit
 prompt adam1
 
-setopt histignorealldups sharehistory
+# History Options
+setopt histignorealldups
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
+
 
 # aliases
 alias l="ls -la"
