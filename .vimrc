@@ -1,5 +1,8 @@
 " General
 set nocompatible
+" keep external commands from triggering the "Hit ENTER" prompt
+"silent !echo Hello
+
 "" filetype off
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100) " Highlight characters at long lines
@@ -8,12 +11,10 @@ set list
 set encoding=utf-8
 set nu
 
-"NERDcommenter"
-
 " Colors on Mac
 syntax on
 set t_Co=256
-colorscheme evening
+colorscheme 
 
 " KeyMappings
 inoremap ;; <esc>
@@ -25,6 +26,8 @@ noremap <right> <c-w>w
 
 "NERD Commenter"
 "noremap <leader>cc <c-/>
+nnoremap <cu> <Plug>NERDCommenterToggle('n', 'Toggle')
+inoremap <cu> <C-o>:call NERDComment(0,"toggle")<C-m>
 
 " Bracket/Quote Matching
 " http://vim.wikia.com/wiki/Making_Parenthesis_And_Brackets_Handling_Easier
@@ -35,17 +38,17 @@ inoremap " ""<Esc>i
 
 " Python
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-""    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4|
+    \ set softtabstop=4|
+    \ set shiftwidth=4|
+""    \ set textwidth=79|
+    \ set expandtab|
+    \ set autoindent|
     \ set fileformat=unix
 
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
+    \ set tabstop=2     |
+    \ set softtabstop=2 |
     \ set shiftwidth=2
 
 " Plugins
