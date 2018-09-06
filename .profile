@@ -16,6 +16,8 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# add Anaconda to PATH
+export PATH="/Users/hannah/anaconda3/bin:$PATH"
+
 # set PATH so it includes user's private bin directories
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-_byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
