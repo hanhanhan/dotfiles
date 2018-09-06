@@ -7,8 +7,8 @@ set listchars=tab:>~,nbsp:_,trail:. " Show whitespace
 set list
 set encoding=utf-8
 set nu
-
-"NERDcommenter"
+"Show what's happening"
+set showcmd
 
 " Colors on Mac
 syntax on
@@ -16,7 +16,9 @@ set t_Co=256
 colorscheme evening
 
 " KeyMappings
+let mapleader = ","
 inoremap ;; <esc>
+inoremap jk <esc>
 nnoremap ; :
 nnoremap <down> <Nop>
 nnoremap <up> <Nop>
@@ -35,17 +37,17 @@ inoremap " ""<Esc>i
 
 " Python
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-""    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
 
 au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
     \ set shiftwidth=2
 
 " Plugins
@@ -60,4 +62,6 @@ call plug#begin('~/.vim/plugged')
 	"Python"
 	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 	Plug 'nvie/vim-flake8'
+	Plug 'eshion/vim-sync'
 call plug#end()
+
