@@ -1,2 +1,7 @@
+# added for vim plug: https://github.com/junegunn/vim-plug/issues/263
+.vim/plugged
 *.pyc
 .DS_Store
+# added for https://github.com/eshion/vim-sync/
+.sync
+.vscode
