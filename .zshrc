@@ -42,7 +42,8 @@ export HISTCONTROL=ignoredups:erasedups
 
 # add Anaconda to PATH
 export PATH="/Users/hannah/anaconda3/bin:$PATH"
-
+# add Macports to PATH
+export PATH="/opt/local/bin:$PATH"
 # append history entries..
 # investigate
 # shopt not found
