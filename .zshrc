@@ -41,7 +41,7 @@ fi
 export HISTCONTROL=ignoredups:erasedups
 
 # add Anaconda to PATH
-export PATH="/Users/hannah/anaconda3/bin:$PATH"
+# export PATH="/Users/hannah/anaconda3/bin:$PATH"  # commented out by conda initialize
 # add Macports to PATH
 export PATH="/opt/local/bin:$PATH"
 # append history entries..
@@ -87,6 +87,8 @@ export ZSH=/Users/hannah/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# This theme does not show path at prompt
+# ZSH_THEME="agnoster-short"
 ZSH_THEME="agnoster"
 
 # Set list of themes to load
@@ -152,11 +154,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='code'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -174,3 +176,26 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Javascript Related
+# node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/hannah/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/hannah/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/hannah/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/hannah/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
